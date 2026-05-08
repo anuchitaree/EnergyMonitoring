@@ -1,6 +1,8 @@
 ﻿using EnergyMonitoring.Data;
 using EnergyMonitoring.Interfaces;
 using EnergyMonitoring.Models;
+using EnergyMonitoring.Modules;
+using Microsoft.EntityFrameworkCore;
 
 namespace EnergyMonitoring.Services
 {
@@ -37,6 +39,23 @@ namespace EnergyMonitoring.Services
         public Task<List<EnergyMinute>> GetEnergyMinute(DateTime from, DateTime to)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<List<EnergyMinute>> GetEnergyMinuteOneday(DateTime now)
+        {
+            var fromto = DateTimeFunc.DataInOnedayUtc(now);
+
+            var result = await db.EnergyMinutes.
+                        Where(x => x.Minute >= fromto.FromDateTime && x.Minute <= fromto.ToDateTime)
+                        .Select(x => new EnergyMinute
+                        {
+                            Id = x.Id,
+                            Minute = x.Minute.ToLocalTime(),
+                            EnergyKwh = x.EnergyKwh,
+                            MaxPower = x.MaxPower
+                        })
+                        .ToListAsync();
+            return result;
         }
 
         public Task<List<PzemRaw>> GetPzemRaw()

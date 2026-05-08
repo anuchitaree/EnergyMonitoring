@@ -10,6 +10,7 @@ namespace EnergyMonitoring.Interfaces
 
 
         Task<List<EnergyMinute>> GetEnergyMinute(DateTime from, DateTime to);
+        Task<List<EnergyMinute>> GetEnergyMinuteOneday(DateTime now);
         Task<bool> PostEnergyMinute(EnergyMinute raw);
         Task<bool> PutEnergyMinute(EnergyMinute raw);
 

@@ -1,5 +1,15 @@
 [
   {
+    "ContainingType": "EnergyMonitoring.Controllers.DataVisualizeController",
+    "Method": "GetOneDayData",
+    "RelativePath": "api/v1/DataVisualize/one-day",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "EnergyMonitoring.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

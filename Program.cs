@@ -37,6 +37,7 @@ namespace EnergyMonitoring
             }));
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
+            builder.Services.AddTransient<IVisualizeService, VisualizeService>();
             builder.Services.AddTransient<IDatabaseInterface, DatabaseServices>();
             builder.Services.AddTransient<IDatapreparing, DatapreparingService>();
 
