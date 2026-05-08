@@ -6,28 +6,28 @@ namespace EnergyMonitoring.Modules
     {
         public static DateTime SetDayUtc(DateTime dt)
         {
-            return new DateTime(dt.Year, dt.Month, dt.Day, 0, 0, 0, DateTimeKind.Utc);
+            return new DateTime(dt.Year, dt.Month, dt.Day, 0, 0, 0).ToUniversalTime();
         }
 
         public static ResultFromTo DataInOnedayUtc(DateTime dt)
         {
             return  new ResultFromTo {
-                FromDateTime = new DateTime(dt.Year, dt.Month, dt.Day, 0, 0, 0, DateTimeKind.Utc),
-                ToDateTime = new DateTime(dt.Year, dt.Month, dt.Day, 23, 59, 0, DateTimeKind.Utc)
+                FromDateTime = new DateTime(dt.Year, dt.Month, dt.Day, 0, 0, 0).ToUniversalTime(),
+                ToDateTime = new DateTime(dt.Year, dt.Month, dt.Day, 23, 59, 0).ToUniversalTime()
             };
         }
 
         public static DateTime SetHourUtc(DateTime dt)
         {
-            return new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0, DateTimeKind.Utc);
+            return new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0).ToUniversalTime();
         }
 
         public static ResultFromTo DataInOneHourUtc(DateTime dt)
         {
             return new ResultFromTo
             {
-                FromDateTime = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0, DateTimeKind.Utc),
-                ToDateTime = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour,  59, 0, DateTimeKind.Utc)
+                FromDateTime = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0).ToUniversalTime(),
+                ToDateTime = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour,  59, 0).ToUniversalTime()
             };
         }
         public static string FindQ15Minute(DateTime dt)
@@ -56,31 +56,31 @@ namespace EnergyMonitoring.Modules
             switch (q1)
             {
                 case "Q1":
-                    return (new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0, DateTimeKind.Utc),
+                    return (new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0).ToUniversalTime(),
                         new ResultFromTo {
-                        FromDateTime = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0, DateTimeKind.Utc),
-                        ToDateTime = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 14, 0, DateTimeKind.Utc)
-                    });
+                        FromDateTime = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 0, 0).ToUniversalTime(),
+                        ToDateTime = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 14, 0).ToUniversalTime()
+                        });
                     
                 case "Q2":
-                    return (new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 15, 0, DateTimeKind.Utc),
+                    return (new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 15, 0).ToUniversalTime(),
                         new ResultFromTo {
-                        FromDateTime = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 15, 0, DateTimeKind.Utc),
-                        ToDateTime = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 29, 0, DateTimeKind.Utc)
-                    });
+                        FromDateTime = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 15, 0).ToUniversalTime(),
+                        ToDateTime = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 29, 0).ToUniversalTime()
+                        });
 
                 case "Q3":
-                    return (new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 30, 0, DateTimeKind.Utc),
+                    return (new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 30, 0).ToUniversalTime(),
                         new ResultFromTo {
-                        FromDateTime = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 30, 0, DateTimeKind.Utc),
-                        ToDateTime = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 44 , 0 , DateTimeKind.Utc)
-                    });
+                        FromDateTime = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 30, 0).ToUniversalTime(),
+                        ToDateTime = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, 44 , 0).ToUniversalTime()
+                        });
                 case "Q4":
-                    return (new DateTime(dt.Year ,dt.Month ,dt.Day ,dt.Hour ,45 ,0 ,DateTimeKind.Utc),
+                    return (new DateTime(dt.Year ,dt.Month ,dt.Day ,dt.Hour ,45 ,0).ToUniversalTime(),
                         new ResultFromTo {
-                        FromDateTime = new DateTime(dt.Year ,dt.Month ,dt.Day ,dt.Hour ,45 ,0 ,DateTimeKind.Utc),
-                        ToDateTime = new DateTime(dt.Year ,dt.Month ,dt.Day ,dt.Hour ,59 ,0 ,DateTimeKind.Utc)
-                    });
+                        FromDateTime = new DateTime(dt.Year ,dt.Month ,dt.Day ,dt.Hour ,45 ,0).ToUniversalTime(),
+                        ToDateTime = new DateTime(dt.Year ,dt.Month ,dt.Day ,dt.Hour ,59 ,0).ToUniversalTime()
+                        });
 
                 default:
                     throw new ArgumentException("Invalid quarter specified. Use Q1 to Q4.");

@@ -38,26 +38,27 @@ namespace EnergyMonitoring.Services
         public PzemRaw ReadData()
         {
             // อ่าน 9 registers
-            var result = _modbus.ReadUInt16("x=3;0", 10);
+            var result = _modbus.ReadUInt16("x=4;0", 10);
 
             if (!result.IsSuccess)
                 throw new Exception(result.Message);
 
             var r = result.Content;
 
-            float voltage = r[0] / 10.0f;
+            float voltage = r[0] / 10.0f;  // 220.0  V
 
             uint currentRaw = ((uint)r[2] << 16) | r[1];
-            float current = currentRaw / 1000.0f;
+            float current = currentRaw / 1000.0f;     // 10.001 A
 
             uint powerRaw = ((uint)r[4] << 16) | r[3];
-            float power = powerRaw / 10.0f;
+            float power = powerRaw / 10000.0f;           //  250.1 KW
 
             uint energyRaw = ((uint)r[6] << 16) | r[5];
-            float energy = energyRaw/1000.0f;
+            float energy = energyRaw/1000.0f;            //  150 KWh
 
-            float frequency = r[7] / 10.0f;
-            float pf = r[8] / 100.0f;
+            float frequency = r[7] / 10.0f;   // 0.1 Hz
+
+            float pf = r[8] / 100.0f;     // 0.98 pf
 
             int alarm = r[9];
 

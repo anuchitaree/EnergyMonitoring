@@ -8,7 +8,6 @@ namespace EnergyMonitoring.Interfaces
         Task<bool> PostPzemRaw(PzemRaw raw);
 
 
-
         Task<List<EnergyMinute>> GetEnergyMinute(DateTime from, DateTime to);
         Task<List<EnergyMinute>> GetEnergyMinuteOneday(DateTime now);
         Task<bool> PostEnergyMinute(EnergyMinute raw);

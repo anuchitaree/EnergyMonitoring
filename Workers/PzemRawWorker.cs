@@ -75,6 +75,7 @@ namespace EnergyMonitoring.Workers
                     _lastEnergy = data.Energy;
 
                     // 👉 เก็บ RAW
+                    _logger.LogInformation($" *****************  V={data.Voltage},P={data.Power},E={data.Energy} *******************");
                     await SaveRaw(data, nowUtc);  // every 5 วินาที
 
 

@@ -21,6 +21,11 @@ namespace EnergyMonitoring.Services
 
 
 
+        
+
+
+
+
         public Task<List<Energy15Minute>> GetEnergy15Minute(DateTime from, DateTime to)
         {
             throw new NotImplementedException();

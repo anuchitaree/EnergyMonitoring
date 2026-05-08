@@ -7,18 +7,18 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=pzemdb
+      # - POSTGRES_DB=pzemdb
     ports:
       - 5432:5432
-    # volumes:
-    #   - D:\Database\postgres_data:/var/lib/postgresql/data
+    volumes:
+      - C:\Database\postgres_data:/var/lib/postgresql/data
     networks:
       - docker_net
     restart: always
 
   pgadmin4:
     image: dpage/pgadmin4
-    container_name: pgadmin4_container
+    container_name: pgadmin4
     environment:
       - PGADMIN_DEFAULT_EMAIL=admin@admin.com
       - PGADMIN_DEFAULT_PASSWORD=root
