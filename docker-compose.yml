@@ -1,0 +1,49 @@
+version: "3.8"
+
+services:
+  database:
+    image: postgres:13
+    container_name: some-postgres
+    environment:
+      - POSTGRES_PASSWORD=admin
+    ports:
+      - 6000:5432
+    # volumes:
+    #   - D:\PostgresDB:/var/lib/postgresql/data
+    restart: always
+
+  pgadmin4:
+    image: dpage/pgadmin4
+    container_name: some-pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=anuchit.a9f@outlook.co.th
+      - PGADMIN_DEFAULT_PASSWORD=Admin
+    ports:
+      - 5050:80
+    # volumes:
+    #   - D:\PostgresDB:/var/lib/postgresql/data
+    restart: always
+
+  # backend:
+  #   build: backend/
+  #   image: dotnet:1.0
+  #   container_name: some-dotnet
+  #   ports:
+  #     - 7028:80
+  #   depends_on:
+  #     - database
+  #   environment:
+  #     - TZ=Asia/Bangkok
+  #   restart: always
+
+  # frontend:
+  #   build: frontend/
+  #   image: vue:1.0
+  #   container_name: some-vue
+  #   ports:
+  #     - 8080:80
+  #   depends_on:
+  #     - backend
+  #   environment:
+  #     - TZ=Asia/Bangkok
+  #   restart: always
