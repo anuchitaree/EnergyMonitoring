@@ -3,17 +3,16 @@
 services:
   postgres_db:
     image: postgres:16
-    container_name: postgres
+    container_name: postgres16
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      # - POSTGRES_DB=pzemdb
     ports:
       - 5432:5432
     volumes:
       - C:\Database\postgres_data:/var/lib/postgresql/data
     networks:
-      - docker_net
+      - backend
     restart: always
 
   pgadmin4:
@@ -27,9 +26,10 @@ services:
     # volumes:
     # - D:\Database\postgres_data:/var/lib/postgresql/data
     networks:
-      - docker_net
+      - backend
     restart: always
 
 networks:
-  docker_net: 
-    name: docker_network
+  backend:
+    external: true 
+    name: backend-net
