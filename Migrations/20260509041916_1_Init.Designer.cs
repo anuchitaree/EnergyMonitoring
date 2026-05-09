@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EnergyMonitoring.Migrations
 {
     [DbContext(typeof(EnergyContext))]
-    [Migration("20260508083407_init")]
-    partial class init
+    [Migration("20260509041916_1_Init")]
+    partial class _1_Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

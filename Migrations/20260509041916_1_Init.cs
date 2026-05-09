@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EnergyMonitoring.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class _1_Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

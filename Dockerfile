@@ -19,9 +19,9 @@ RUN dotnet publish "EnergyMonitoring.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 # serial port support
-RUN apt-get update && apt-get install -y \
-    libgdiplus \
-    && rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && apt-get install -y \
+#     libgdiplus \
+#     && rm -rf /var/lib/apt/lists/*
     
 COPY --from=publish /app/publish .
 ENV ASPNETCORE_URLS=http://+:8080

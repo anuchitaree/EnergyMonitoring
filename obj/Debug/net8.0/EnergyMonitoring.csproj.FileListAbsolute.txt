@@ -246,4 +246,4 @@ C:\Project\EnergyMonitoring\bin\Debug\net8.0\runtimes\osx-x64\native\libSystem.I
 C:\Project\EnergyMonitoring\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.IO.Ports.dll
 C:\Project\EnergyMonitoring\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.IO.Ports.dll
 C:\Project\EnergyMonitoring\obj\Debug\net8.0\EnergyMonitoring.sourcelink.json
-C:\Project\EnergyMonitoring\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Project\EnergyMonitoring\obj\Debug\net8.0\swae.build.ex.cache

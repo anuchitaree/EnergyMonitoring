@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EnergyMonitoring")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ef24200c0cabef8e43860d43ce953a66d50bd2f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a0d465b64144a1a7908309c9957a7db2f3c25fcc")]
 [assembly: System.Reflection.AssemblyProductAttribute("EnergyMonitoring")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EnergyMonitoring")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
