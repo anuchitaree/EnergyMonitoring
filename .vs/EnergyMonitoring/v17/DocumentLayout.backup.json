@@ -1,38 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Project\\EnergyMonitoring\\",
+  "WorkspaceRootPath": "D:\\Project\\EnergyMonitoring\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|c:\\project\\energymonitoring\\database\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|solutionrelative:database\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|d:\\project\\energymonitoring\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|c:\\project\\energymonitoring\\energymonitoring.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|solutionrelative:energymonitoring.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|c:\\project\\energymonitoring\\controllers\\datavisualizecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|solutionrelative:controllers\\datavisualizecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|c:\\project\\energymonitoring\\services\\datapreparingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|solutionrelative:services\\datapreparingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|c:\\project\\energymonitoring\\workers\\minutelyworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|solutionrelative:workers\\minutelyworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|c:\\project\\energymonitoring\\modules\\datetimefunc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|solutionrelative:modules\\datetimefunc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|c:\\project\\energymonitoring\\workers\\pzemrawworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|d:\\project\\energymonitoring\\workers\\pzemrawworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|solutionrelative:workers\\pzemrawworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|c:\\project\\energymonitoring\\services\\modbusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|solutionrelative:services\\modbusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|d:\\project\\energymonitoring\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|d:\\project\\energymonitoring\\controllers\\databasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38BBEC16-DD8D-44E6-AF3D-1C45497D1CE0}|EnergyMonitoring.csproj|solutionrelative:controllers\\databasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -41,115 +25,63 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 274,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 33,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "docker-compose.yml",
-              "DocumentMoniker": "C:\\Project\\EnergyMonitoring\\Database\\docker-compose.yml",
-              "RelativeDocumentMoniker": "Database\\docker-compose.yml",
-              "ToolTip": "C:\\Project\\EnergyMonitoring\\Database\\docker-compose.yml*",
-              "RelativeToolTip": "Database\\docker-compose.yml*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2026-05-09T02:22:12.402Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "EnergyMonitoring",
-              "DocumentMoniker": "C:\\Project\\EnergyMonitoring\\EnergyMonitoring.csproj",
-              "RelativeDocumentMoniker": "EnergyMonitoring.csproj",
-              "ToolTip": "C:\\Project\\EnergyMonitoring\\EnergyMonitoring.csproj*",
-              "RelativeToolTip": "EnergyMonitoring.csproj*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-05-09T02:13:37.622Z",
+              "Title": "PzemRawWorker.cs",
+              "DocumentMoniker": "D:\\Project\\EnergyMonitoring\\Workers\\PzemRawWorker.cs",
+              "RelativeDocumentMoniker": "Workers\\PzemRawWorker.cs",
+              "ToolTip": "D:\\Project\\EnergyMonitoring\\Workers\\PzemRawWorker.cs",
+              "RelativeToolTip": "Workers\\PzemRawWorker.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAgwGwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T07:33:19.371Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Project\\EnergyMonitoring\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Project\\EnergyMonitoring\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAADwvxIAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T06:57:34.148Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "DataVisualizeController.cs",
-              "DocumentMoniker": "C:\\Project\\EnergyMonitoring\\Controllers\\DataVisualizeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\DataVisualizeController.cs",
-              "ToolTip": "C:\\Project\\EnergyMonitoring\\Controllers\\DataVisualizeController.cs",
-              "RelativeToolTip": "Controllers\\DataVisualizeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T14:42:08.891Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DateTimeFunc.cs",
-              "DocumentMoniker": "C:\\Project\\EnergyMonitoring\\Modules\\DateTimeFunc.cs",
-              "RelativeDocumentMoniker": "Modules\\DateTimeFunc.cs",
-              "ToolTip": "C:\\Project\\EnergyMonitoring\\Modules\\DateTimeFunc.cs",
-              "RelativeToolTip": "Modules\\DateTimeFunc.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAowEYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T14:26:14.133Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Project\\EnergyMonitoring\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\Project\\EnergyMonitoring\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-11T06:55:00.669Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "DatapreparingService.cs",
-              "DocumentMoniker": "C:\\Project\\EnergyMonitoring\\Services\\DatapreparingService.cs",
-              "RelativeDocumentMoniker": "Services\\DatapreparingService.cs",
-              "ToolTip": "C:\\Project\\EnergyMonitoring\\Services\\DatapreparingService.cs",
-              "RelativeToolTip": "Services\\DatapreparingService.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAADgv1MAAAAQAAAAAAAAAA==",
+              "Title": "DatabaseController.cs",
+              "DocumentMoniker": "D:\\Project\\EnergyMonitoring\\Controllers\\DatabaseController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DatabaseController.cs",
+              "ToolTip": "D:\\Project\\EnergyMonitoring\\Controllers\\DatabaseController.cs",
+              "RelativeToolTip": "Controllers\\DatabaseController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAcwAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T14:24:33.078Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MinutelyWorker.cs",
-              "DocumentMoniker": "C:\\Project\\EnergyMonitoring\\Workers\\MinutelyWorker.cs",
-              "RelativeDocumentMoniker": "Workers\\MinutelyWorker.cs",
-              "ToolTip": "C:\\Project\\EnergyMonitoring\\Workers\\MinutelyWorker.cs",
-              "RelativeToolTip": "Workers\\MinutelyWorker.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAIBJwCIAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T14:24:03Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ModbusService.cs",
-              "DocumentMoniker": "C:\\Project\\EnergyMonitoring\\Services\\ModbusService.cs",
-              "RelativeDocumentMoniker": "Services\\ModbusService.cs",
-              "ToolTip": "C:\\Project\\EnergyMonitoring\\Services\\ModbusService.cs",
-              "RelativeToolTip": "Services\\ModbusService.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAA1wDAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T13:22:54.532Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PzemRawWorker.cs",
-              "DocumentMoniker": "C:\\Project\\EnergyMonitoring\\Workers\\PzemRawWorker.cs",
-              "RelativeDocumentMoniker": "Workers\\PzemRawWorker.cs",
-              "ToolTip": "C:\\Project\\EnergyMonitoring\\Workers\\PzemRawWorker.cs",
-              "RelativeToolTip": "Workers\\PzemRawWorker.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAEwHIAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T13:27:53.586Z",
+              "WhenOpened": "2026-05-11T06:54:33.572Z",
               "EditorCaption": ""
             }
           ]

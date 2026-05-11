@@ -4,14 +4,14 @@ using System.Threading.Tasks;
 
 namespace EnergyMonitoring.Controllers
 {
-    [Route("api/v1/[controller]")]
     [ApiController]
-    public class DataVisualizeController : ControllerBase
+    [Route("api/v1/data-visualize")]
+    public class DataVisualizeController1 : ControllerBase
     {
 
         private readonly IVisualizeService visualizeService;
-        private readonly ILogger<DataVisualizeController> _logger;
-        public DataVisualizeController(ILogger<DataVisualizeController> logger,
+        private readonly ILogger<DataVisualizeController1> _logger;
+        public DataVisualizeController1(ILogger<DataVisualizeController1> logger,
             IVisualizeService visualizeService)
         {
             _logger = logger;

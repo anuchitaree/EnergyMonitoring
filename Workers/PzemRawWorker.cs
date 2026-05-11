@@ -53,7 +53,7 @@ namespace EnergyMonitoring.Workers
             {
                 var nowUtc = DateTime.UtcNow;
                 var minuteKey = GetMinuteKey(DateTime.Now);
-               
+
 
                 try
                 {
@@ -79,13 +79,13 @@ namespace EnergyMonitoring.Workers
                     await SaveRaw(data, nowUtc);  // every 5 วินาที
 
 
-                   
+
 
                     // 👉 สะสมรายนาที
                     if (!_minuteBuffer.ContainsKey(minuteKey))
                     {
                         _minuteBuffer[minuteKey] = 0;
-                        
+
                     }
 
                     _energerTotal.Add(delta);
@@ -130,25 +130,32 @@ namespace EnergyMonitoring.Workers
         // 🔹 save raw
         private async Task SaveRaw(dynamic data, DateTime now)
         {
-
-            using (var scope = _scopeFactory.CreateScope())
+            try
             {
-                var repo = scope.ServiceProvider.GetRequiredService<IDatabaseInterface>();
-
-                var result = new PzemRaw
+                using (var scope = _scopeFactory.CreateScope())
                 {
-                    Timestamp = now,
-                    Voltage = data.Voltage,
-                    Current = data.Current,
-                    Power = data.Power,
-                    Energy = data.Energy,
-                    Frequency = data.Frequency,
-                    PowerFactor = data.PowerFactor,
-                    Alarm = data.Alarm,
-                };
+                    var repo = scope.ServiceProvider.GetRequiredService<IDatabaseInterface>();
 
-                await repo.PostPzemRaw(result);
+                    var result = new PzemRaw
+                    {
+                        Timestamp = now,
+                        Voltage = data.Voltage,
+                        Current = data.Current,
+                        Power = data.Power,
+                        Energy = data.Energy,
+                        Frequency = data.Frequency,
+                        PowerFactor = data.PowerFactor,
+                        Alarm = data.Alarm,
+                    };
+
+                    await repo.PostPzemRaw(result);
+                }
             }
+            catch 
+            {
+
+            }
+           
 
            
            
@@ -157,27 +164,36 @@ namespace EnergyMonitoring.Workers
         // 🔹 flush นาที
         private async Task FlushMinute(DateTime minute, float totalEnergy, float peakPower)
         {
-            using (var scope = _scopeFactory.CreateScope())
+            try
             {
-                var repo = scope.ServiceProvider.GetRequiredService<IDatabaseInterface>();
+                using (var scope = _scopeFactory.CreateScope())
+                {
+                    var repo = scope.ServiceProvider.GetRequiredService<IDatabaseInterface>();
 
-                var data = new EnergyMinute
-                {
-                    Minute = minute.ToUniversalTime(),
-                    EnergyKwh = totalEnergy,
-                    MaxPower = peakPower
-                };
+                    var data = new EnergyMinute
+                    {
+                        Minute = minute.ToUniversalTime(),
+                        EnergyKwh = totalEnergy,
+                        MaxPower = peakPower
+                    };
 
-              var result = await repo.PostEnergyMinute(data);
-                if (!result)
-                {
-                    _logger.LogError("Failed to save EnergyMinute data");
-                }
-                else
-                {
-                    _logger.LogInformation($"Saved minute {minute}: {totalEnergy} kWh : {peakPower} kW");
+                    var result = await repo.PostEnergyMinute(data);
+                    if (!result)
+                    {
+                        _logger.LogError("Failed to save EnergyMinute data");
+                    }
+                    else
+                    {
+                        _logger.LogInformation($"Saved minute {minute}: {totalEnergy} kWh : {peakPower} kW");
+                    }
                 }
             }
+            catch 
+            {
+
+               
+            }
+            
 
             
           

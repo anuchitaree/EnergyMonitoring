@@ -1,13 +1,10 @@
-
+﻿
 using EnergyMonitoring.Data;
 using EnergyMonitoring.Interfaces;
 using EnergyMonitoring.Models;
 using EnergyMonitoring.Services;
 using EnergyMonitoring.Workers;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
-using System;
-using System.Runtime;
 
 namespace EnergyMonitoring
 {
@@ -27,7 +24,7 @@ namespace EnergyMonitoring
 
             builder.Services.Configure<ModbusSetting>(
             builder.Configuration.GetSection("ModbusSettings"));
-            
+
 
             //PostgreSQL StockContext
             builder.Services.AddDbContext<EnergyContext>(option =>
@@ -41,17 +38,37 @@ namespace EnergyMonitoring
             builder.Services.AddTransient<IDatabaseInterface, DatabaseServices>();
             builder.Services.AddTransient<IDatapreparing, DatapreparingService>();
 
-            builder.Services.AddHostedService<PzemRawWorker>();
-            builder.Services.AddHostedService<HouryWorker>();
-            builder.Services.AddHostedService<DailyWorker>();
-            builder.Services.AddHostedService<MinutelyWorker>();
+            //builder.Services.AddHostedService<PzemRawWorker>();
+            //builder.Services.AddHostedService<HouryWorker>();
+            //builder.Services.AddHostedService<DailyWorker>();
+            //builder.Services.AddHostedService<MinutelyWorker>();
+
+           
+
+
+
 
             builder.Services.AddControllers();
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+
+
             var app = builder.Build();
+
+
+            if (app.Environment.IsProduction())
+            {
+                builder.Services.AddHostedService<PzemRawWorker>();
+                builder.Services.AddHostedService<HouryWorker>();
+                builder.Services.AddHostedService<DailyWorker>();
+                builder.Services.AddHostedService<MinutelyWorker>();
+            }
+
+
+
 
 
             using (var scope = app.Services.CreateScope())
@@ -79,20 +96,30 @@ namespace EnergyMonitoring
             }
 
 
-            // Configure the HTTP request pipeline.
+            //Configure the HTTP request pipeline.
             // if (app.Environment.IsDevelopment())
-            // {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            // }
+            //{
+            app.UseSwagger();
+            app.UseSwaggerUI();
+            //app.UseSwaggerUI(c =>
+            //{
+            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            //    c.RoutePrefix = string.Empty; // ให้เปิดที่ root เช่น http://localhost:5228/
+            //});
+
+            //}
 
 
-            if (!app.Environment.IsDevelopment())
-            {
-                //builder.WebHost.UseUrls("http://*:5081", "https://*.5082");
-                builder.WebHost.UseUrls("http://*:5081");
+            //if (!app.Environment.IsDevelopment())
+            //{
+            //    //builder.WebHost.UseUrls("http://*:5081", "https://*.5082");
+            //    builder.WebHost.UseUrls("http://*:5081");
 
-            }
+            //}
+            //else
+            //{
+            //    builder.WebHost.UseUrls("http://localhost:5081");
+            //}
 
 
             app.UseAuthorization();
