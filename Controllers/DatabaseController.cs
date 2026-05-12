@@ -1,4 +1,5 @@
 ﻿using EnergyMonitoring.Interfaces;
+using EnergyMonitoring.Models;
 using EnergyMonitoring.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -6,26 +7,38 @@ using Microsoft.Extensions.Logging;
 
 namespace EnergyMonitoring.Controllers
 {
-    [Route("api/v1[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class DatabaseController : ControllerBase
     {
 
-        private readonly IDatabaseInterface db;
+        private readonly IDatabaseInterface _db;
 
         private readonly ILogger<DatabaseController> _logger;
         public DatabaseController(ILogger<DatabaseController> logger,
             IDatabaseInterface database)
         {
             _logger = logger;
-            this.db = database;
+            _db = database;
         }
 
-        //[HttpDelete("delete-pzemRaws")]
-        //public async Task<IActionResult> DeletePzemRaws()
-        //{
-        //    return Ok("Deleted successfully");
-        //}
+        [HttpPost("post-pzemraw")]
+        public async Task<ActionResult> PostPzemRaw([FromBody] PzemRaw request)
+        {
+            var result = await _db.PostPzemRaw(request);
+            if (result == false)
+                return BadRequest();
+            return Ok();
+        }
+
+        [HttpPut("put-energyminute")]
+        public async Task<ActionResult> PutEnergyMinute([FromBody] EnergyMinute request)
+        {
+            var result = await _db.PutEnergyMinute(request);
+            if (result == false)
+                return BadRequest();
+            return Ok();
+        }
 
 
 

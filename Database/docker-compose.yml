@@ -22,7 +22,7 @@ services:
       - PGADMIN_DEFAULT_EMAIL=admin@admin.com
       - PGADMIN_DEFAULT_PASSWORD=root
     ports:
-      - 5051:80
+      - 8085:80
     # volumes:
     # - D:\Database\postgres_data:/var/lib/postgresql/data
     networks:

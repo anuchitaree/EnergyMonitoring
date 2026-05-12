@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 
 namespace EnergyMonitoring.Controllers
 {
-    [Route("api/v1/[controller]")]
     [ApiController]
+    [Route("api/v1/data-visualize")]
     public class DataVisualizeController : ControllerBase
     {
 
@@ -22,7 +22,7 @@ namespace EnergyMonitoring.Controllers
         public async Task<IActionResult> GetOneDayData()
         {
             var data = await visualizeService.GetEnergyMinutesAsync(DateTime.Now);
-            if(data == null || data.Count == 0)
+            if (data == null || data.Count == 0)
             {
                 return NotFound("No energy data found for today.");
             }

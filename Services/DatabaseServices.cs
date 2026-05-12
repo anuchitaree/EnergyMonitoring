@@ -138,9 +138,30 @@ namespace EnergyMonitoring.Services
             throw new NotImplementedException();
         }
 
-        public Task<bool> PutEnergyMinute(EnergyMinute raw)
+        public  async Task<bool> PutEnergyMinute(EnergyMinute raw)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var check = db.EnergyMinutes.
+               Where(x => x.Minute == raw.Minute).FirstOrDefault();
+                if (check == null)
+                {
+                    db.EnergyMinutes.Add(raw);
+                }
+                else
+                {
+                    check.EnergyKwh = raw.EnergyKwh;
+                    check.MaxPower = raw.MaxPower;
+                    db.EnergyMinutes.Update(check);
+                }
+                await db.SaveChangesAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
+    
 }

@@ -33,17 +33,22 @@ namespace EnergyMonitoring.Workers
             _logger = logger;
             _scopeFactory = scopeFactory;
             _mobusSetting = mobusSetting.Value;
+            try
+            {
+                _modbus = new ModbusService(
+               _mobusSetting.Port,
+               _mobusSetting.BaudRate,
+               _mobusSetting.DataBits,
+               _mobusSetting.StopBits,
+               _mobusSetting.Parity,
+               _mobusSetting.SlaveId
+           );
+                _currentMinute = GetMinuteKey(DateTime.Now);
+            }
+            catch 
+            {
 
-            _modbus = new ModbusService(
-                _mobusSetting.Port,
-                _mobusSetting.BaudRate,
-                _mobusSetting.DataBits,
-                _mobusSetting.StopBits,
-                _mobusSetting.Parity,
-                _mobusSetting.SlaveId
-            );
-            _currentMinute = GetMinuteKey(DateTime.Now);
-
+            }
 
         }
 
