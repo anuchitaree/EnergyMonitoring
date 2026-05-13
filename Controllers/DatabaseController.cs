@@ -19,11 +19,7 @@ namespace EnergyMonitoring.Controllers
             IDatabaseInterface database)
         {
             _logger = logger;
-<<<<<<< HEAD
-            _db = database;
-=======
            _db = database;
->>>>>>> 89b4663897b39168111e4244143aa9d7782a03e6
         }
 
         [HttpPost("post-pzemraw")]

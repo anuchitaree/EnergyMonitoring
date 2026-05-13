@@ -6,11 +6,7 @@ namespace EnergyMonitoring.Controllers
 {
     [ApiController]
     [Route("api/v1/data-visualize")]
-<<<<<<< HEAD:Controllers/DataVisualizeController.cs
-    public class DataVisualizeController : ControllerBase
-=======
     public class DataVisualizeController1 : ControllerBase
->>>>>>> 89b4663897b39168111e4244143aa9d7782a03e6:Controllers/DataVisualizeController1.cs
     {
 
         private readonly IVisualizeService visualizeService;

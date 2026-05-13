@@ -38,7 +38,9 @@ namespace EnergyMonitoring.Services
         public PzemRaw ReadData()
         {
             // อ่าน 9 registers
+            
             var result = _modbus.ReadUInt16("x=4;0", 10);
+           
 
             if (!result.IsSuccess)
                 throw new Exception(result.Message);

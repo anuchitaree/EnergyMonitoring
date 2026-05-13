@@ -15,7 +15,7 @@ namespace EnergyMonitoring.Workers
         private readonly IServiceScopeFactory _scopeFactory;
 
         private readonly ModbusSetting _mobusSetting;
-        private readonly ModbusService _modbus;
+        private readonly ModbusService _modbus ;
 
         private float? _lastEnergy = null;
 
@@ -47,7 +47,9 @@ namespace EnergyMonitoring.Workers
             }
             catch 
             {
-
+                // fallback ป้องกัน warning
+               _modbus = new ModbusService("COM1", 9600, 8, 1, "None", 1);
+               _currentMinute = GetMinuteKey(DateTime.Now);
             }
 
         }
