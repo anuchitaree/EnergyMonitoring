@@ -138,7 +138,11 @@ namespace EnergyMonitoring.Services
             throw new NotImplementedException();
         }
 
+<<<<<<< HEAD
         public  async Task<bool> PutEnergyMinute(EnergyMinute raw)
+=======
+        public async Task<bool> PutEnergyMinute(EnergyMinute raw)
+>>>>>>> 89b4663897b39168111e4244143aa9d7782a03e6
         {
             try
             {

@@ -10,7 +10,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - C:\Database\postgres_data:/var/lib/postgresql/data
+      - D:\Database\postgres_data:/var/lib/postgresql/data
     networks:
       - backend
     restart: always

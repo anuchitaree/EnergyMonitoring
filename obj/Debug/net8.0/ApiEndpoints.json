@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "EnergyMonitoring.Controllers.DataVisualizeController",
+    "ContainingType": "EnergyMonitoring.Controllers.DataVisualizeController1",
     "Method": "GetOneDayData",
     "RelativePath": "api/v1/data-visualize/one-day",
     "HttpMethod": "GET",
@@ -12,7 +12,11 @@
   {
     "ContainingType": "EnergyMonitoring.Controllers.DatabaseController",
     "Method": "PostPzemRaw",
+<<<<<<< HEAD
     "RelativePath": "api/v1/Database/post-pzemraw",
+=======
+    "RelativePath": "api/v1Database/post-pzemraw",
+>>>>>>> 89b4663897b39168111e4244143aa9d7782a03e6
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -28,7 +32,11 @@
   {
     "ContainingType": "EnergyMonitoring.Controllers.DatabaseController",
     "Method": "PutEnergyMinute",
+<<<<<<< HEAD
     "RelativePath": "api/v1/Database/put-energyminute",
+=======
+    "RelativePath": "api/v1Database/put-energyminute",
+>>>>>>> 89b4663897b39168111e4244143aa9d7782a03e6
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,

@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 ﻿using EnergyMonitoring.Data;
+=======
+﻿
+using EnergyMonitoring.Data;
+>>>>>>> 89b4663897b39168111e4244143aa9d7782a03e6
 using EnergyMonitoring.Interfaces;
 using EnergyMonitoring.Models;
 using EnergyMonitoring.Services;
@@ -38,9 +43,20 @@ namespace EnergyMonitoring
             builder.Services.AddTransient<IDatapreparing, DatapreparingService>();
 
             //builder.Services.AddHostedService<PzemRawWorker>();
+<<<<<<< HEAD
             builder.Services.AddHostedService<HouryWorker>();
             builder.Services.AddHostedService<DailyWorker>();
             builder.Services.AddHostedService<MinutelyWorker>();
+=======
+            //builder.Services.AddHostedService<HouryWorker>();
+            //builder.Services.AddHostedService<DailyWorker>();
+            //builder.Services.AddHostedService<MinutelyWorker>();
+
+           
+
+
+
+>>>>>>> 89b4663897b39168111e4244143aa9d7782a03e6
 
 
             builder.Services.AddControllers();
@@ -49,9 +65,28 @@ namespace EnergyMonitoring
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+<<<<<<< HEAD
 
 
             var app = builder.Build();
+=======
+
+
+            var app = builder.Build();
+
+
+            if (app.Environment.IsProduction())
+            {
+                builder.Services.AddHostedService<PzemRawWorker>();
+                builder.Services.AddHostedService<HouryWorker>();
+                builder.Services.AddHostedService<DailyWorker>();
+                builder.Services.AddHostedService<MinutelyWorker>();
+            }
+
+
+
+
+>>>>>>> 89b4663897b39168111e4244143aa9d7782a03e6
 
             using (var scope = app.Services.CreateScope())
             {
@@ -83,6 +118,29 @@ namespace EnergyMonitoring
             //{
             app.UseSwagger();
             app.UseSwaggerUI();
+<<<<<<< HEAD
+=======
+            //app.UseSwaggerUI(c =>
+            //{
+            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            //    c.RoutePrefix = string.Empty; // ให้เปิดที่ root เช่น http://localhost:5228/
+            //});
+
+            //}
+
+
+            //if (!app.Environment.IsDevelopment())
+            //{
+            //    //builder.WebHost.UseUrls("http://*:5081", "https://*.5082");
+            //    builder.WebHost.UseUrls("http://*:5081");
+
+            //}
+            //else
+            //{
+            //    builder.WebHost.UseUrls("http://localhost:5081");
+            //}
+
+>>>>>>> 89b4663897b39168111e4244143aa9d7782a03e6
 
             app.UseAuthorization();
 

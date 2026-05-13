@@ -246,4 +246,7 @@ D:\Project\EnergyMonitoring\obj\Debug\net8.0\refint\EnergyMonitoring.dll
 D:\Project\EnergyMonitoring\obj\Debug\net8.0\EnergyMonitoring.pdb
 D:\Project\EnergyMonitoring\obj\Debug\net8.0\EnergyMonitoring.genruntimeconfig.cache
 D:\Project\EnergyMonitoring\obj\Debug\net8.0\ref\EnergyMonitoring.dll
+<<<<<<< HEAD
 D:\Project\EnergyMonitoring\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+=======
+>>>>>>> 89b4663897b39168111e4244143aa9d7782a03e6
