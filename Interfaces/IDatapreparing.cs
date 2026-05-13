@@ -1,4 +1,6 @@
-﻿namespace EnergyMonitoring.Interfaces
+﻿using EnergyMonitoring.Models;
+
+namespace EnergyMonitoring.Interfaces
 {
     public interface IDatapreparing
     {
@@ -7,5 +9,6 @@
         Task<bool> HourlyDataNow(DateTime nowDateTime);
         Task<bool> HourlyDataLast(DateTime nowDateTime);
         Task<bool> FifteenMinuteData(DateTime nowDateTime);
+        Task<bool> MinutelyProcess(List<PzemRaw> raw);
     }
 }

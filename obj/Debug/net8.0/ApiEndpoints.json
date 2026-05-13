@@ -12,18 +12,14 @@
   {
     "ContainingType": "EnergyMonitoring.Controllers.DatabaseController",
     "Method": "PostPzemRaw",
-<<<<<<< HEAD
     "RelativePath": "api/v1/Database/post-pzemraw",
-=======
-    "RelativePath": "api/v1Database/post-pzemraw",
->>>>>>> 89b4663897b39168111e4244143aa9d7782a03e6
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "request",
-        "Type": "EnergyMonitoring.Models.PzemRaw",
+        "Type": "System.Collections.Generic.List\u00601[[EnergyMonitoring.Models.PzemRaw, EnergyMonitoring, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],
@@ -32,11 +28,7 @@
   {
     "ContainingType": "EnergyMonitoring.Controllers.DatabaseController",
     "Method": "PutEnergyMinute",
-<<<<<<< HEAD
     "RelativePath": "api/v1/Database/put-energyminute",
-=======
-    "RelativePath": "api/v1Database/put-energyminute",
->>>>>>> 89b4663897b39168111e4244143aa9d7782a03e6
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,

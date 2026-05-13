@@ -10,12 +10,15 @@ namespace EnergyMonitoring.Services
     {
 
         private readonly EnergyContext db;
+        //private readonly IDatapreparing _datapreparing;
         private readonly ILogger<DatabaseServices> _logger;
 
         public DatabaseServices(EnergyContext databaseContext,
+            IDatapreparing datapreparing,
             ILogger<DatabaseServices> logger)
         {
             db = databaseContext;
+            //this._datapreparing = datapreparing;
             _logger = logger;
         }
 
@@ -109,11 +112,14 @@ namespace EnergyMonitoring.Services
 
         }
 
-        public async Task<bool> PostPzemRaw(PzemRaw raw)
+        public async Task<bool> PostPzemRaw(List<PzemRaw>raw)
         {
             try
             {
-                await db.PzemRaws.AddAsync(raw);
+
+                //await _datapreparing.MinutelyProcess(raw);
+
+                await db.PzemRaws.AddRangeAsync(raw);
                 await db.SaveChangesAsync();
                 return true;
             }

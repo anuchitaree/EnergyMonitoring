@@ -83,7 +83,7 @@ namespace EnergyMonitoring.Workers
 
                     // 👉 เก็บ RAW
                     _logger.LogInformation($" *****************  V={data.Voltage},P={data.Power},E={data.Energy} *******************");
-                    await SaveRaw(data, nowUtc);  // every 5 วินาที
+                    //await SaveRaw(data, nowUtc);  // every 5 วินาที
 
 
 
@@ -107,7 +107,7 @@ namespace EnergyMonitoring.Workers
                         var totalEnergy = _energerTotal.Sum();
                         var PeakPower = _powerTotal.Count > 0 ? _powerTotal.Max() : 0;
 
-                        await FlushMinute(_currentMinute, totalEnergy, PeakPower);
+                        //await FlushMinute(_currentMinute, totalEnergy, PeakPower);
 
                         _energerTotal.Clear();
                         _powerTotal.Clear();
@@ -135,38 +135,38 @@ namespace EnergyMonitoring.Workers
         }
 
         // 🔹 save raw
-        private async Task SaveRaw(dynamic data, DateTime now)
-        {
-            try
-            {
-                using (var scope = _scopeFactory.CreateScope())
-                {
-                    var repo = scope.ServiceProvider.GetRequiredService<IDatabaseInterface>();
+        //private async Task SaveRaw(dynamic data, DateTime now)
+        //{
+        //    try
+        //    {
+                //using (var scope = _scopeFactory.CreateScope())
+                //{
+                //    var repo = scope.ServiceProvider.GetRequiredService<IDatabaseInterface>();
 
-                    var result = new PzemRaw
-                    {
-                        Timestamp = now,
-                        Voltage = data.Voltage,
-                        Current = data.Current,
-                        Power = data.Power,
-                        Energy = data.Energy,
-                        Frequency = data.Frequency,
-                        PowerFactor = data.PowerFactor,
-                        Alarm = data.Alarm,
-                    };
+                //    var result = new PzemRaw
+                //    {
+                //        Timestamp = now,
+                //        Voltage = data.Voltage,
+                //        Current = data.Current,
+                //        Power = data.Power,
+                //        Energy = data.Energy,
+                //        Frequency = data.Frequency,
+                //        PowerFactor = data.PowerFactor,
+                //        Alarm = data.Alarm,
+                //    };
 
-                    await repo.PostPzemRaw(result);
-                }
-            }
-            catch 
-            {
+                //    await repo.PostPzemRaw(result);
+                //}
+        //    }
+        //    catch 
+        //    {
 
-            }
+        //    }
            
 
            
            
-        }
+        //}
 
         // 🔹 flush นาที
         private async Task FlushMinute(DateTime minute, float totalEnergy, float peakPower)

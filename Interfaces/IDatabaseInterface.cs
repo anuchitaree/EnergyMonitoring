@@ -5,7 +5,7 @@ namespace EnergyMonitoring.Interfaces
     public interface IDatabaseInterface
     {
         Task<List<PzemRaw>> GetPzemRaw();
-        Task<bool> PostPzemRaw(PzemRaw raw);
+        Task<bool> PostPzemRaw(List<PzemRaw> raw);
 
 
         Task<List<EnergyMinute>> GetEnergyMinute(DateTime from, DateTime to);

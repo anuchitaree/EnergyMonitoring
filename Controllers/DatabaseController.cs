@@ -4,6 +4,7 @@ using EnergyMonitoring.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Linq;
 
 namespace EnergyMonitoring.Controllers
 {
@@ -13,19 +14,22 @@ namespace EnergyMonitoring.Controllers
     {
 
         private readonly IDatabaseInterface _db;
-
+        private readonly IDatapreparing _prepare;
         private readonly ILogger<DatabaseController> _logger;
         public DatabaseController(ILogger<DatabaseController> logger,
+            IDatapreparing prepare,
             IDatabaseInterface database)
         {
             _logger = logger;
            _db = database;
+            _prepare = prepare;
         }
 
         [HttpPost("post-pzemraw")]
-        public async Task<ActionResult> PostPzemRaw([FromBody] PzemRaw request)
+        public async Task<ActionResult> PostPzemRaw([FromBody] List<PzemRaw> request)
         {
             var result = await _db.PostPzemRaw(request);
+           var processresult =  await _prepare.MinutelyProcess(request);
             if (result == false)
                 return BadRequest();
             return Ok();

@@ -5,7 +5,6 @@
     "version": "1.0"
   },
   "paths": {
-<<<<<<< HEAD
     "/api/v1/Database/post-pzemraw": {
       "post": {
         "tags": [
@@ -15,17 +14,26 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PzemRaw"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PzemRaw"
+                }
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/PzemRaw"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PzemRaw"
+                }
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/PzemRaw"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PzemRaw"
+                }
               }
             }
           }
@@ -70,74 +78,6 @@
     },
     "/api/v1/data-visualize/one-day": {
       "get": {
-=======
-    "/api/v1Database/post-pzemraw": {
-      "post": {
->>>>>>> 89b4663897b39168111e4244143aa9d7782a03e6
-        "tags": [
-          "Database"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PzemRaw"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PzemRaw"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PzemRaw"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-<<<<<<< HEAD
-=======
-    },
-    "/api/v1Database/put-energyminute": {
-      "put": {
-        "tags": [
-          "Database"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EnergyMinute"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EnergyMinute"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/EnergyMinute"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/v1/data-visualize/one-day": {
-      "get": {
         "tags": [
           "DataVisualizeController1"
         ],
@@ -147,7 +87,6 @@
           }
         }
       }
->>>>>>> 89b4663897b39168111e4244143aa9d7782a03e6
     }
   },
   "components": {

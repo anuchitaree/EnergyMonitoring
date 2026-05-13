@@ -9,14 +9,15 @@ namespace EnergyMonitoring.Services
     public class DatapreparingService : IDatapreparing
     {
         private readonly ILogger<DatapreparingService> _logger;
-        private readonly IDatabaseInterface _dbService;
+        //private readonly IDatabaseInterface _dbService;
+
         private readonly EnergyContext db;
         public DatapreparingService(EnergyContext databaseContext,
-            ILogger<DatapreparingService> logger,
-            IDatabaseInterface dbService)
+            //IDatabaseInterface dbService,
+            ILogger<DatapreparingService> logger)
         {
             _logger = logger;
-            _dbService = dbService;
+            //_dbService = dbService;
             db = databaseContext;
         }
 
@@ -274,6 +275,56 @@ namespace EnergyMonitoring.Services
                 return false;
             }
 
+        }
+
+        public  async Task<bool> MinutelyProcess(List<PzemRaw> raw)
+        {
+            try
+            {
+                DateTime lastMinute = DateTime.UtcNow.AddMinutes(-1);
+                var date = DateTimeFunc.DataInOneMinuteUtc(lastMinute);
+
+                var daysKey = DateTimeFunc.SetMinuteUtc(lastMinute);
+                var lastMinuteTable = await db.PzemRaws
+                                        .Where(d => d.Timestamp >= date.FromDateTime && d.Timestamp <= date.ToDateTime).ToListAsync();
+                if (lastMinuteTable.Count == 0)
+                {
+                    _logger.LogInformation("No data found for the last hour: {hour}", daysKey);
+                    return false;
+                }
+
+                var sumEnergy = lastMinuteTable.Sum(d => d.Energy);
+                var maxPower = lastMinuteTable.Max(d => d.Power);
+
+
+                var checklastupdate = await db.EnergyMinutes
+                        .Where(d => d.Minute == daysKey)
+                        .FirstOrDefaultAsync();
+
+                if (checklastupdate == null)
+                {
+                    var newDayData = new EnergyMinute
+                    {
+                        Minute = daysKey,
+                        EnergyKwh = sumEnergy,
+                        MaxPower = maxPower
+                    };
+                    await db.EnergyMinutes.AddAsync(newDayData);
+                    await db.SaveChangesAsync();
+                }
+                else
+                {
+                    checklastupdate.EnergyKwh = sumEnergy;
+                    checklastupdate.MaxPower = maxPower;
+                    db.EnergyMinutes.Update(checklastupdate);
+                    await db.SaveChangesAsync();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

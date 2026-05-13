@@ -30,6 +30,22 @@ namespace EnergyMonitoring.Modules
                 ToDateTime = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour,  59, 0).ToUniversalTime()
             };
         }
+
+        public static DateTime SetMinuteUtc(DateTime dt)
+        {
+            return new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, 0).ToUniversalTime();
+        }
+
+        public static ResultFromTo DataInOneMinuteUtc(DateTime dt)
+        {
+            return new ResultFromTo
+            {
+                FromDateTime = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, 0).ToUniversalTime(),
+                ToDateTime = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, 59).ToUniversalTime()
+            };
+        }
+
+
         public static string FindQ15Minute(DateTime dt)
         {
             if(dt.Minute >= 0 && dt.Minute <= 14)
