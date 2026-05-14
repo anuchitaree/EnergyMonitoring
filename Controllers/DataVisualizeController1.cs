@@ -9,19 +9,19 @@ namespace EnergyMonitoring.Controllers
     public class DataVisualizeController1 : ControllerBase
     {
 
-        private readonly IVisualizeService visualizeService;
+        private readonly IVisualizeService _dashboard;
         private readonly ILogger<DataVisualizeController1> _logger;
         public DataVisualizeController1(ILogger<DataVisualizeController1> logger,
             IVisualizeService visualizeService)
         {
             _logger = logger;
-            this.visualizeService = visualizeService;
+            _dashboard = visualizeService;
         }
 
         [HttpGet("one-day")]
         public async Task<IActionResult> GetOneDayData()
         {
-            var data = await visualizeService.GetEnergyMinutesAsync(DateTime.Now);
+            var data = await _dashboard.GetEnergyMinutesAsync(DateTime.Now);
             if (data == null || data.Count == 0)
             {
                 return NotFound("No energy data found for today.");
