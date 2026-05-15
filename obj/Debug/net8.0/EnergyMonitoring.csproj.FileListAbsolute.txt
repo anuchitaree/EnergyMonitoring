@@ -124,3 +124,4 @@ D:\Project\EnergyMonitoring\obj\Debug\net8.0\refint\EnergyMonitoring.dll
 D:\Project\EnergyMonitoring\obj\Debug\net8.0\EnergyMonitoring.pdb
 D:\Project\EnergyMonitoring\obj\Debug\net8.0\EnergyMonitoring.genruntimeconfig.cache
 D:\Project\EnergyMonitoring\obj\Debug\net8.0\ref\EnergyMonitoring.dll
+D:\Project\EnergyMonitoring\bin\Debug\net8.0\Mockup\Hour.json

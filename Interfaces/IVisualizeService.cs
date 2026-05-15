@@ -7,7 +7,7 @@ namespace EnergyMonitoring.Interfaces
 
         Task<List<EnergyMinute>> GetEnergyMinutesAsync(DateTime date);
 
-       
+        Task<List<EnergyHour>> GetEnergyHourlyAsync(DateTime date);
 
     }
 }

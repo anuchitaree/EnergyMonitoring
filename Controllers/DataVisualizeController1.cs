@@ -29,6 +29,16 @@ namespace EnergyMonitoring.Controllers
             return Ok(data);
         }
 
+        [HttpGet("one-day-hourly")]
+        public async Task<IActionResult> GetOneDayHourlyData()
+        {
+            var data = await _dashboard.GetEnergyHourlyAsync(DateTime.Now);
+            if (data == null || data.Count == 0)
+            {
+                return NotFound("No energy data found for today.");
+            }
+            return Ok(data);
+        }
 
 
 

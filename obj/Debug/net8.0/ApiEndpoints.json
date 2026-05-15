@@ -10,6 +10,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "EnergyMonitoring.Controllers.DataVisualizeController1",
+    "Method": "GetOneDayHourlyData",
+    "RelativePath": "api/v1/data-visualize/one-day-hourly",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "EnergyMonitoring.Controllers.DatabaseController",
     "Method": "PostPzemRaw",
     "RelativePath": "api/v1/Database/post-pzemraw",

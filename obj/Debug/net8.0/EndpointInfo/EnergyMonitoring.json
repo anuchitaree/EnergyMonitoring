@@ -87,6 +87,18 @@
           }
         }
       }
+    },
+    "/api/v1/data-visualize/one-day-hourly": {
+      "get": {
+        "tags": [
+          "DataVisualizeController1"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {

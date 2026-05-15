@@ -15,6 +15,20 @@ namespace EnergyMonitoring.Services
             db = databaseInterface;
             _logger = logger;
         }
+
+        public async Task<List<EnergyHour>> GetEnergyHourlyAsync(DateTime date)
+        {
+            string path = @"c:\project\mockup\hourlydata.json";
+            var options = new JsonSerializerOptions
+            {   
+                PropertyNameCaseInsensitive = true
+            };
+            using var stream = File.OpenRead(path);
+
+            var data = await JsonSerializer.DeserializeAsync<List<EnergyHour>>(stream);
+            return data ?? new List<EnergyHour>();
+        }
+
         public async Task<List<EnergyMinute>> GetEnergyMinutesAsync(DateTime date)
         {
            
@@ -30,5 +44,7 @@ namespace EnergyMonitoring.Services
 
             //return JsonSerializer.Deserialize<List<EnergyMinute>>(json, options);
         }
+
+       
     }
 }
